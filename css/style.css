@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+    /* colors */
+    --green: #00DF5E;
+    --gray-one: #333333;
+    --gray-two: #212121;
+    --black: #171717;
+    --gray-three: #828282;
+    --white: #F9F9F9;
+
+    --background: #1A1A1A;
+
+    /* font */
+    --default: 'DM Sans', sans-serif;
+}
+
+* {
+    font-family: var(--default);
+    background: var(--background);
+    color: var(--white);
+    letter-spacing: 0;
+    scroll-behavior: smooth;
+}
+
+
+.header {
+    max-width: 1440px;
+    margin: 35px auto 0 auto;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__menu > a {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+.menu__item {
+    display: inline-block;
+}
+
+.menu__item:not(:last-child) {
+    margin-right: 45px;
+}
+
+.menu__item a {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 23px;
+}
+
+.menu__item a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: var(--white);
+    transition:  .2s;
+}
+
+.menu__item a:hover::after {
+    width: 100%;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 150px auto 185px auto;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .main__content h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 47px;
+    max-width: 240px;
+}
+
+.main .main__content h2 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    color: var(--gray-three);
+}
+
+.about {
+    margin: 50px auto 0 auto;
+    max-width: 745px;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 30px;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 41.66px;
+}
+
+.about p {
+    color: var(--gray-three);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.about__info {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.about__info > div > span {
+    display: block;
+}
+
+span.info__title {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 23px;
+}
+
+span.info__value {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20.83px;
+}
+
+.info__icon lord-icon {
+    padding: 8px;
+    background: transparent;
+    background: var(--gray-two);
+    border-radius: 50%;
+}

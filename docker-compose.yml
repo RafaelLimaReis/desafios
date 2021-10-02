@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  front:
+    container_name: desafios_github
+    image: node:alpine
+    working_dir: /app
+    expose: 
+      - 3000
+      - 3001
+    ports: 
+      - '3000:3000'
+      - '3001:3001'
+    command: sh -c 'npm install -g browser-sync && browser-sync start -f './' --server'
+    volumes:
+      - .:/app
