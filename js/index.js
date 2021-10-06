@@ -1,5 +1,5 @@
 document.getElementById('scrollTop').addEventListener('click', () => {
-    location.href = location.origin + '#main';
+    location.href = location.origin + location.pathname + '#main';
     icon.style.display = 'flex';
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -23,7 +23,7 @@ icon.addEventListener('click', () => {
                 if (arr.length == i+2) {
                     icon.style.display = 'none';
                 }
-                location.href = location.origin + '#' + document.getElementsByTagName('section')[i+1].id;
+                location.href = location.origin + location.pathname + '#' + document.getElementsByTagName('section')[i+1].id;
             }
         });
     }

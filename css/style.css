@@ -13,6 +13,15 @@
     --default: 'Roboto', sans-serif;
 }
 
+*, ::before, ::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* 
+html {
+    scroll-behavior: smooth;
+} */
+
 * {
     font-family: var(--default);
     padding: 0;
