@@ -1,57 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 :root {
     /* colors */
-    --green: #00DF5E;
-    --gray-one: #333333;
-    --gray-two: #212121;
-    --black: #171717;
-    --gray-three: #828282;
-    --white: #F9F9F9;
-
-    --background: #1A1A1A;
+    --backgroud: #131219;
+    --backgroud-two: #17161d;
+    --text-color: #c9c9c9;
+    --text-title: #fefbfb;
+    --green-base: #32CD30;
+    --white: #f9f9f9;
 
     /* font */
-    --default: 'DM Sans', sans-serif;
+    --default: 'Roboto', sans-serif;
 }
 
 * {
     font-family: var(--default);
-    background: var(--background);
-    color: var(--white);
-    letter-spacing: 0;
-    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+    user-select: none;
 }
 
+/* scroll top config */
+#scrollTop {
+    width: 50px;
+    height: 50px;
+    background: var(--backgroud-two);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    right: 0;
+    bottom: 30px;
+    cursor: pointer;
+}
 
-.header {
+#scrollTop i {
+    color: var(--green-base);
+}
+
+#scrollTop:hover i {
+    animation: bottomToTop .7s infinite;
+}
+
+#nextSection {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    position: fixed;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+    bottom: 30px;
+    cursor: pointer;
+}
+
+#nextSection i {
+    color: var(--green-base);
+}
+
+/* container config */
+.container {
+    background: var(--backgroud);
+}
+
+.container-clean {
+    background: var(--backgroud-two);
+}
+
+.container-limit {
     max-width: 1440px;
-    margin: 35px auto 0 auto;
+    margin: 0 auto;
+}
+
+/* menu config */
+.header {
+    padding: 20px 0;
+    background: var(--backgroud-two);
 }
 
 .header__menu {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header__menu > a {
     font-size: 26px;
     font-weight: 700;
     line-height: 34px;
+    color: var(--white);
 }
 
 .menu__item {
     display: inline-block;
-}
-
-.menu__item:not(:last-child) {
-    margin-right: 45px;
+    
 }
 
 .menu__item a {
     font-size: 18px;
     font-weight: 400;
     line-height: 23px;
+    color: var(--white);
+}
+
+.menu__item:not(:last-child) {
+    margin-right: 45px;
+}
+
+.menu__item a:hover {
+    color: var(--green-base);
 }
 
 .menu__item a::after {
@@ -59,7 +123,7 @@
     display: block;
     width: 0;
     height: 1px;
-    background: var(--white);
+    background: var(--green-base);
     transition:  .2s;
 }
 
@@ -67,17 +131,22 @@
     width: 100%;
 }
 
-.container {
-    max-width: 1440px;
-    margin: 150px auto 185px auto;
-}
+/* main */
 
 .main {
+    padding-top: 150px;
     display: flex;
+    height: 90vh;
     justify-content: space-between;
+    position: relative;
+}
+
+.main .main__content {
+    margin-top: 200px;
 }
 
 .main .main__content h1 {
+    color: var(--text-title);
     font-size: 36px;
     font-weight: 700;
     line-height: 47px;
@@ -85,28 +154,102 @@
 }
 
 .main .main__content h2 {
+    position: relative;
+    margin-right: 5px;
     font-size: 18px;
     font-weight: 500;
     line-height: 23px;
-    color: var(--gray-three);
+    letter-spacing: 1px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 8s steps(31) infinite;
+    animation-delay: 2s;
 }
 
+.main .main__content h2::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    background: var(--green-base);
+    top: 0;
+    right: 0;
+    animation: blinkCursor .8s steps(3) infinite;
+}
+
+.main .main__svg > img {
+    width: 300px;
+    position: absolute;
+    right: 0;
+    top: -100px;
+}
+
+.main__svg .svg__tags svg {
+    width: 50px;
+    fill: var(--green-base);
+}
+
+.main__svg .svg__tags svg:first-child {
+    position: absolute;
+    right: 0;
+    top: -100px;
+    animation: moveTop 4s infinite;
+}
+
+.main__svg .svg__tags svg:last-child {
+    animation: moveTop 4s infinite;
+    position: absolute;
+    right: 250px;
+    top: -60px;
+    animation-delay: .5s;
+}
+
+.main__content .main__buttons a:first-child {
+    margin-right: 20px;
+}
+/* sobre */
+
 .about {
-    margin: 50px auto 0 auto;
-    max-width: 745px;
+    padding-top: 80px;
+    height: 80vh;
+    margin: 0 auto;
+    max-width: 1100px;
     text-align: center;
 }
 
-.about h2 {
+.about__card {
+    display: flex;
+}
+
+.about__card .about__img {
+    width: 50%;
+}
+
+.about__img img {
+    width: 60%;
+    height: 80%;
+}
+
+.about__card .about__text {
+    width: 50%;
+}
+
+.about h2,
+.challenges__container h2 {
+    display: block;
     margin-bottom: 30px;
-    color: var(--white);
+    color: var(--text-title);
     font-weight: 700;
     font-size: 32px;
     line-height: 41.66px;
+    text-align: center;
 }
 
 .about p {
-    color: var(--gray-three);
+    color: var(--text-color);
     font-weight: 400;
     font-size: 18px;
     line-height: 32px;
@@ -123,6 +266,7 @@
 }
 
 span.info__title {
+    color: var(--text-title);
     margin-top: 20px;
     font-size: 18px;
     font-weight: 700;
@@ -130,6 +274,7 @@ span.info__title {
 }
 
 span.info__value {
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 400;
     line-height: 20.83px;
@@ -140,4 +285,71 @@ span.info__value {
     background: transparent;
     background: var(--gray-two);
     border-radius: 50%;
+}
+
+.challenges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.challenges__container {
+    margin-top: 100px;
+}
+
+.challenges__item {
+    margin-bottom: 30px;
+    background-color: var(--gray-two);
+    display: block;
+    width: 300px;
+    height: 200px;
+    padding: 20px 25px;
+}
+
+.challenges__item:not(:nth-child(3n)) {
+    margin-right: 45px;
+}
+
+.challenges__img {
+    display: block;
+    width: 300px;
+    height: 130px;
+    background-color: var(--black);
+}
+
+
+.challenges__title {
+    margin: 23px 0 6px 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 23px;
+    letter-spacing: 0em;
+}
+
+.challenges__technologies {
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+}
+
+
+/* reused */
+.btn {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    padding: 20px 10px;
+    border: 1px solid var(--green-base);
+    border-radius: 5px;
+    color: var(--white);
+    font-weight: 800;
+    background-image: linear-gradient(225deg, rgba(50, 205, 48, .3) 0%, rgba(50, 205, 48, 0) 100%);
+    background-size: 200% auto;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    background-position: right center;
 }
