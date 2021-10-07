@@ -1,0 +1,99 @@
+.menu__mobile {
+    display: none;
+}
+
+@media (max-width: 1224px) {
+    .challenges {
+        justify-content: space-evenly;
+    }
+
+    .challenges__item {
+        margin-right: 0 !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 1024px) {
+    .header {
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .menu__mobile {
+        display: block;
+    }
+
+    .menu__list {
+        position: absolute;
+        right: 0;
+        top: 82px;
+        height: 90vh;
+        z-index: 9;
+        width: 250px;
+        visibility: hidden;
+        background: var(--backgroud-two);
+    }
+
+    .menu__list.active {
+        visibility: visible;
+    }
+
+    .menu__list > .menu__item {
+        display: inline-block;
+        padding: 30px 0 10px 20px;
+    }
+}
+
+@media (max-width: 750px) {
+    .main {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main__content {
+        margin-top: 0;
+    }
+
+    .main__svg {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .container-limit {
+        padding: 0 10px;
+    }
+
+    .main__buttons .btn {
+        width: 126px;
+    }
+
+    .about__img {
+        display: none;
+    }
+
+    .about__text {
+        width: 100% !important;
+    }
+
+    .about__info {
+        flex-direction: column;
+    }
+
+    .about__info div {
+        margin-bottom: 20px;
+    }
+
+    .challenges__item {
+        width: 300px;
+    }
+
+    .challenges__item .challenges__img {
+        width: auto;
+    }
+
+    #nextSection {
+        display: none;
+    }
+}

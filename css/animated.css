@@ -11,6 +11,7 @@
         transform: translateY(0);
     }
 }
+
 @keyframes topToBottom {
     from {
         transform: translateY(0);
@@ -22,6 +23,18 @@
 
     to {
         transform: translateY(0);
+    }
+}
+
+@keyframes rightToLeft {
+    from {
+        transform: translateX(10px);
+        opacity: .2;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
 
