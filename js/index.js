@@ -1,7 +1,7 @@
-const icon = document.getElementById('nextSection');
+const nextSection = document.getElementById('nextSection');
+const isMobile = navigator.userAgentData.mobile;
 var menuIsEnable = false;
 var on = false;
-
 
 document.getElementById('scrollTop').addEventListener('click', toTop);
 
@@ -18,7 +18,7 @@ setInterval(function () {
     stateAngle(urlHash);
 })
 
-icon.addEventListener('click', () => {
+nextSection.addEventListener('click', () => {
     const urlHash = window.location.hash;
     if (urlHash == '') {
         location.href += '#' + document.getElementsByTagName('section')[1].id;
@@ -41,8 +41,8 @@ sr.reveal('.animate-d3', {delay: 600});
 
 function toTop()
 {
+    if(!isMobile) nextSection.style.display = 'flex';
     location.href = location.origin + location.pathname + '#main';
-    icon.style.display = 'flex';
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
@@ -61,9 +61,9 @@ function stateAngle(urlHash)
     [...document.getElementsByTagName('section')].forEach((element, i, arr) => {
         if (`#${element.id}` == urlHash) {
             if (arr.length == i+2) {
-                icon.style.display = 'none';
+                nextSection.style.display = 'none';
             } else {
-                icon.style.display = 'flex';
+                nextSection.style.display = 'flex';
             }
             location.href = location.origin + location.pathname + '#' + document.getElementsByTagName('section')[i+1].id;
         }
